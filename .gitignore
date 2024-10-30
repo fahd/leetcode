@@ -1,0 +1,8 @@
+.DS_Store
+node_modules
+_python.txt
+leetnotes/*
+/leetnotes
+playground.py
+playground.ts
+old_py
