@@ -1,4 +1,4 @@
-''' =========== OBJECTS ==========='''
+''' =========== DICTS ==========='''
 o = {'a':1,'b':2, 'c':3}
 
 # for item in o:
@@ -30,3 +30,8 @@ print(len(o)) # 2
 values = o.values()
 for val in values:
 	print('val',val)
+
+''' =========== SETS ==========='''
+
+# Set from a list
+set1 = set([1,2,3,4,5])
