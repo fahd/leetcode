@@ -22,6 +22,13 @@ arr2 = [
 	[2,3]
 ]
 
+''' Adding items in array '''
+l = sum([1,2,3,4,5])
+
+''' Creating a list from characters '''
+list_of_chars = list('abc')
+# ['a','b','c']
+
 ''' Deconstructing an array of arrays '''
 # for a, b in arr2:
 # 	print('a',a,'b',b)
@@ -31,14 +38,12 @@ arr3 = [[0, 1, 2], [1, 2]]
 # for a, *rest in arr3:
 #     print(f"a = {a}, rest = {rest}")
 
-''' Going backwards '''
-# for i in range(len(l) - 1, -1, -1):
-
 ''' Filling in an array with predetermined values ''' 
 # arr = [0] * n
 
-''' Adding items in array '''
-l = sum([1,2,3,4,5])
+''' Going backwards '''
+# for i in range(len(l) - 1, -1, -1):
+
 
 
 l1_sorted = [0,4,9,12,34]
