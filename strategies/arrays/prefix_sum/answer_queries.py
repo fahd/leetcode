@@ -21,9 +21,7 @@ def answer_queries(nums, queries, limit):
 print(answer_queries([1,2,3,4,5],[[0,4]],16))
 
 """ OR """
-#  If we want the sum of the subarray from i to j (inclusive), then the answer is prefix[j] - prefix[i - 1], or prefix[j] - prefix[i] + nums[i] if you don't want to deal with the out of bounds case when i = 0.
 
-# Without the prefix sum, answering each query would be O(n)O(n) in the worst case, where nn is the length of nums. If m = queries.length, that would give a time complexity of O(n∗m)O(n∗m). With the prefix sum, it costs O(n)O(n) to build, but then answering each query is O(1)O(1). This gives a much better time complexity of O(n+m)O(n+m). We use O(n)O(n) space to build the prefix sum.
 
 def answer_queries(nums, queries, limit):
     prefix = [nums[0]]
