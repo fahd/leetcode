@@ -1,3 +1,25 @@
+# Attempt 3
+class Solution:
+    def reverseWords(self, s: str) -> str:
+        n = len(s)
+        l = list(s)
+        i = 0
+        
+
+        for j in range(n + 1):
+            if j == n or l[j] == " ":
+                left = i
+                right = j - 1
+                # swap
+                while left < right:
+                    l[left], l[right] = l[right], l[left]
+                    left += 1
+                    right -= 1
+                # after swap
+                i = j + 1
+        
+        return "".join(l)
+
 # Attempt 2
 class Solution:
     def reverseWords(self, s: str) -> str:
