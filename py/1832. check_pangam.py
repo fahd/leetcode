@@ -1,3 +1,9 @@
+'''
+
+We use a hash set seen to store all the unique letters we encounter. There are at most 26 unique lowercase letters, so the space complexity is O(1).
+
+'''
+
 # 2
 # letters are lowercase
 class Solution:
