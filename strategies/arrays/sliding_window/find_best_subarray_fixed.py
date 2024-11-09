@@ -9,4 +9,4 @@ def find_best_subarray_fixed(nums, k):
 		ans = max(curr, ans)
 	return ans
 
-print(find_best_subarray([1,2,3,4,5],2))
+print(find_best_subarray_fixed([1,2,3,4,5],2))
