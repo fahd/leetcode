@@ -18,35 +18,86 @@ losers = {
 winners = [1,2,10]
 losers = [4,5,7,8]
 
+[[1,3],[2,3],[3,6],[5,6],[5,7],[4,5],[4,8],[4,9],[10,4],[10,9]]
+
+losses = {
+	1:0
+	2:0
+	3:2
+
+}
+
 
 '''
+
+# 4 - Official - Even Betterer
+def findWinners(self, matches: List[List[int]]) -> List[List[int]]:
+        losses_count = [-1] * 100001
+
+        for winner, loser in matches:
+            if losses_count[winner] == -1:
+                losses_count[winner] = 0
+            if losses_count[loser] == -1:
+                losses_count[loser] = 1
+            else:
+                losses_count[loser] += 1
+            
+        answer = [[], []]
+        for i in range(100001):
+            if losses_count[i] == 0:
+                answer[0].append(i)
+            elif losses_count[i] == 1:
+                answer[1].append(i)
+                
+        return answer
+
+# 3 - Official
+
+class Solution: 
+    def findWinners(self, matches: List[List[int]]) ->List[List[int]]: 
+        losses_count = {}
+        
+        for winner, loser in matches:
+            losses_count[winner] = losses_count.get(winner, 0)
+            losses_count[loser] = losses_count.get(loser, 0) + 1
+        
+        zero_lose, one_lose = [], []
+        for player, count in losses_count.items():
+            if count == 0:
+                zero_lose.append(player)
+            if count == 1:
+                one_lose.append(player)
+        
+        return [sorted(zero_lose), sorted(one_lose)]
+
+# 2
+
 class Solution:
     def findWinners(self, matches: List[List[int]]) -> List[List[int]]:
-        ans = []
-        w = set()
-        l = dict()
-
-        losers = []
+        losses = dict()
 
         for i in range(len(matches)):
-            match = matches[i]
-            [winner, loser] = match
-            
-            w.add(winner)
-            
-            l.setdefault(loser,0)
-            l[loser] += 1
-            
-            if loser in w:
-                w.remove(loser)
-            if winner in l:
-                w.remove(winner)
-                
-        for key, val in l.items():
-            if val == 1:
-                losers.append(key)
-        
-        winners = set(w)
-        ans.append(sorted(winners))
-        ans.append(sorted(losers))
-        return ans
+            [winner, loser] = matches[i]
+            if winner not in losses:
+                losses[winner] = losses.setdefault(winner,0)
+            losses[loser] = losses.setdefault(loser,0) + 1
+		
+        winners_no_losses = [key for key, val in losses.items() if val == 0]
+        single_losers = [key for key, val in losses.items() if val == 1]
+        return [sorted(winners_no_losses), sorted(single_losers)]
+
+# 1
+class Solution:
+    def findWinners(self, matches: List[List[int]]) -> List[List[int]]:
+        losses = dict()
+
+        for i in range(len(matches)):
+            [winner, loser] = matches[i]
+			if winner not in losses:
+				losses[winner] = losses.setdefault(winner,0)
+			losses[loser] = losses.setdefault(loser,0) + 1
+		
+		winners_no_losses = [key for key, val in losses.items() if val == 0]
+		single_losers = [key for key, val in losses.items() if val == 1]
+		return [sorted(winners_no_losses, single_losers)]
+
