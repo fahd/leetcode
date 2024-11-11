@@ -12,6 +12,11 @@ arr1 = [1,2,3]
 # for i in range(len(arr)):
 #     print('i',i) # starts from 0
 
+''' Enumeration '''
+for i,val in enumerate([1,2,3]):
+	print('i',i)
+	print('val',val)
+
 
 
 ''' Adding items in array '''
