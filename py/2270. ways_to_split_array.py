@@ -1,3 +1,5 @@
+# [10, 4, -8, 7]
+# [10, 14, 6, 13]
 class Solution:
     def waysToSplitArray(self, nums: List[int]) -> int:
         c = 0
