@@ -31,6 +31,10 @@ values = o.values()
 for val in values:
 	print('val',val)
 
+
+''' Creating a default dictionary where each value is an empty list '''
+l = defaultdict(list)
+
 ''' =========== SETS ==========='''
 
 # Set from a list
