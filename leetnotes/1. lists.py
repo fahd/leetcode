@@ -23,7 +23,6 @@ for i,val in enumerate([1,2,3]):
 l = sum([1,2,3,4,5])
 
 
-
 ''' Creating a list from characters '''
 list_of_chars = list('abc')
 # ['a','b','c']
