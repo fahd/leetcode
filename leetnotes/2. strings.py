@@ -25,7 +25,7 @@ for key,value in dic.items():
 ''' Convert array into string '''
 l1 = [1,2,3]
 print('str:', str(l1))
-
+x = dict({})
 
 
 ''' -- '''

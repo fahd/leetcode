@@ -12,3 +12,5 @@ function twoSum(nums: number[], target:number): number[] {
   }
   return []
 }
+
+console.log('twoSum', twoSum([4,1,3,2],5))

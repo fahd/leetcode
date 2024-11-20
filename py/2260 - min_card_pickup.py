@@ -7,10 +7,7 @@ class Solution:
 
         for i,card in enumerate(cards):
             l[card].append(i)
-        
-        for key in l:
-            arr = l[key]
-            for i in range(len(arr)-1):
-                ans = min(ans, arr[i+1] - arr[i] + 1)
-            
+            if len(l[card]) > 1:
+                ans=min(ans, l[card][-1] - l[card][-2] + 1)
+
         return -1 if ans == float('inf') else ans
