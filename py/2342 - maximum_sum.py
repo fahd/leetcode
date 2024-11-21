@@ -6,19 +6,15 @@ class Solution:
             n += nc % 10
             nc = nc // 10
         return n
-
+    
     def maximumSum(self, nums: List[int]) -> int:
-        o = dict()
-        ans = 0
-
+        o = defaultdict(int)
+        ans = -1
         for num in nums:
             key = self.sumDigits(num)
             if key in o:
-                mv = o[key]
-                ans = max(ans, num + mv)
-            o[key] = o.get(key, 0)
+                ans = max(ans, num + o[key])
             o[key] = max(o[key], num)
 
-        return -1 if ans == 0 else ans
-
+        return ans
 

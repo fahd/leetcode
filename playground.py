@@ -1,3 +1,6 @@
-min = float('-inf')
-print(15 > min)
+from collections import defaultdict
+
+o = dict()
+o[1]
+print('o',o)
 
