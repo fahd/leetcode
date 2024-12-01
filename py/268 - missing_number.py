@@ -1,3 +1,17 @@
+#4
+class Solution:
+    def missingNumber(self, nums: List[int]) -> int:
+        ''' Only needs to be length of numbers because we start with 1, the problem starts with a 0 as the first index
+        '''
+        n = len(nums)
+        # s_hypothetical = sum([x for x in range(n)])
+        
+        '''Even better, sum of first n numbers'''
+        s_hypothetical = n * (n+1) // 2
+        s_actual = sum(nums)
+
+        return s_hypothetical - s_actual
+        
 #3
 class Solution:
     def missingNumber(self, nums: List[int]) -> int:
