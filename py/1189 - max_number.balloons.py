@@ -1,3 +1,10 @@
+#4
+class Solution:
+    def maxNumberOfBalloons(self, text: str) -> int:
+        counter = Counter(text)
+        counter['l'] /= 2
+        counter['o'] /= 2
+        return int(min(counter['b'],counter['a'],counter['l'],counter['o'],counter['n']))
 # 2
 class Solution:
     def maxNumberOfBalloons(self, text: str) -> int:

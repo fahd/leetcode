@@ -1,4 +1,47 @@
 '''
+[1,3],
+[2,3],
+[3,6]
+    3:2
+    6:1
+
+set_w = (
+    1,
+    2
+)
+
+add loser to loser hashmap
+
+if winner is not in loser hashmap:
+    add winner to winner set
+if loser in winner set:
+    remove loser from winner set
+
+filter loser hashmap at end for loser_count == 1
+'''
+from collections import defaultdict
+
+class Solution:
+    def findWinners(self, matches: List[List[int]]) -> List[List[int]]:
+        set_w = set()
+        map_l = defaultdict(int)
+
+        for i in range(len(matches)):
+            match = matches[i]
+            [winner, loser] = match
+            
+            map_l[loser] += 1
+
+            if winner not in map_l:
+                set_w.add(winner)
+            if loser in set_w:
+                set_w.remove(loser)
+        
+        return [
+            sorted(list(set_w)),
+            sorted([x for x in map_l if map_l[x] == 1])
+        ]
+'''
 winners = {
     1:1
     2:1

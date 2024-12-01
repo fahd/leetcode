@@ -1,3 +1,15 @@
+class Solution:
+    def countElements(self, arr: List[int]) -> int:
+        counter = set(arr)
+        count = 0
+        for num in arr:
+            if num + 1 in counter:
+                count += 1
+        return count
+        
+
+
+
 # O(n log n) time O(1) space
 class Solution:
     def countElements(self, arr: List[int]) -> int:

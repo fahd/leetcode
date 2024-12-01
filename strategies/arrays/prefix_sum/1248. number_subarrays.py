@@ -4,7 +4,8 @@
 
 # If a problem asks for the: 
 	# Number of subarrays
-	# Finding subarrays that meet a certain sum or count condition) (like having a specific sum, product, or a certain number of odd/even elements), it’s a good hint that the prefix sum approach could be useful.
+	# Finding subarrays that meet a certain sum or count condition) (like having 
+    # a specific sum, product, or a certain number of odd/even elements), it’s a good hint that the prefix sum approach could be useful.
   
 class Solution:
     def numberOfSubarrays(self, nums: List[int], k: int) -> int:
