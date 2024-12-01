@@ -1,3 +1,2 @@
-st = 'aAcC'
-l = set(st)
-print('l',l)
+x = null
+print(x == null)
