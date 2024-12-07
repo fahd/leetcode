@@ -1,3 +1,23 @@
+'''
+
+ 1 - 2 - 3 - 4
+
+ dummy = {
+  next:
+}
+
+node = head
+prev = dummy
+
+while node and node.next:
+  1 -> 3 => first.next = second.next
+  2 -> 1 -> 3 second.next = first 
+  2 -> 1 -> 3 -> 4
+  prev.next =   
+  
+  
+  
+'''
 function isAnagram(s: string, t: string): boolean {
     if (s.length !== t.length) return false;
 
