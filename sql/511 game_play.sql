@@ -45,6 +45,15 @@ Output:
 
 SELECT
     player_id,
+    MIN(event_date) AS first_login
+FROM
+    Activity AAA -- AAA = alias
+GROUP BY
+    AAA.player_id;
+
+---
+SELECT
+    player_id,
     MIN(event_date) as first_login
 FROM
     Activity
