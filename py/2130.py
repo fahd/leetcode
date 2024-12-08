@@ -21,6 +21,33 @@ l
 3. compare maxes
 1 - 2 - 5 - 4 - 3
 '''
+# Official Solution
+class Solution:
+    def pairSum(self, head: Optional[ListNode]) -> int:
+        slow, fast = head, head
+
+        max_sum = 0
+
+        while fast and fast.next:
+            slow = slow.next
+            fast = fast.next.next
+        
+        middle = slow
+        prev = None
+
+        while middle:
+            middle.next, prev, middle = prev, middle, middle.next
+        
+        node = head
+
+        while prev:
+            max_sum = max(max_sum, node.val + prev.val)
+            prev = prev.next
+            node = node.next
+        
+        return max_sum
+
+# My Solution
 class Solution:
     def reverse_linked_list(self, node: ListNode):
         prev = None
@@ -57,3 +84,9 @@ class Solution:
             node = node.next
             s = s.next
         return c
+
+
+
+
+
+
