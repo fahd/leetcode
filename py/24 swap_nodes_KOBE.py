@@ -3,6 +3,29 @@
 #     def __init__(self, val=0, next=None):
 #         self.val = val
 #         self.next = next
+class Solution:
+    def swapPairs(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        if not head or not head.next:
+            return head
+
+        dummy = ListNode(-1)
+        node = dummy
+        ref = head
+        
+        while ref:
+            if ref.next:
+                reversed = None
+                curr = ref
+                for _ in range(2):
+                    curr.next, reversed, curr = reversed, curr, curr.next
+                ref = curr
+                node.next = reversed
+                node = node.next.next
+            else:
+                node.next = ref
+                ref = ref.next
+
+        return dummy.next
 
 '''
     [1,2,3,4]

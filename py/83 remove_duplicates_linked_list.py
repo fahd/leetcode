@@ -2,6 +2,22 @@ class Solution:
     def deleteDuplicates(self, head: Optional[ListNode]) -> Optional[ListNode]:
         if not head or not head.next:
             return head
+
+        node = head
+
+        while node and node.next:
+            if node.val == node.next.val:
+                node.next = node.next.next
+            else:
+                node = node.next
+        
+        return head
+        
+# Solution 3
+class Solution:
+    def deleteDuplicates(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        if not head or not head.next:
+            return head
         
         node = head
 
