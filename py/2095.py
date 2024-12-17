@@ -9,7 +9,7 @@ class Solution:
             prev = slow
             slow = slow.next
             fast = fast.next.next
-        
+
         prev.next = prev.next.next
 
         return head
@@ -26,13 +26,13 @@ class Solution:
         while fast and fast.next:
             slow = slow.next
             fast = fast.next.next
-            
+
             if not iterated:
                 iterated = True
                 slower = head
             else:
                 slower = slower.next
-        
+
         slower.next = slower.next.next
 
         return head

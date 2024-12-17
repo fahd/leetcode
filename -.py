@@ -1,4 +1,7 @@
-l = [0,1]
-[item, man] = l
-print('item',item)
-print('man',man)
+from collections import deque
+
+q = deque()
+q.append(1)
+q.append(2)
+q.append(3)
+print('q',q[-1])
