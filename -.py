@@ -1,7 +1,6 @@
-from collections import deque
+items = ('Derek','Driverman')
+x,y = items
+print('x',x)
+print('y',y)
+# ----------- 
 
-q = deque()
-q.append(1)
-q.append(2)
-q.append(3)
-print('q',q[-1])
