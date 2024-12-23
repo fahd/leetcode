@@ -1,6 +1,2 @@
-items = ('Derek','Driverman')
-x,y = items
-print('x',x)
-print('y',y)
-# ----------- 
-
+seen = set({10})
+print('seen',len(seen))
