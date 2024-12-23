@@ -1,2 +1,2 @@
-seen = set({10})
-print('seen',len(seen))
+l = [1,2,3,4,5]
+print(l[::-1])
