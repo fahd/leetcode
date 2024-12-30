@@ -1,4 +1,24 @@
 '''
+
+Each iteration of the loop takes O ( log ⁡ n ) O(logn) time from the heap operations. The number of operations needed is linear with n. While you may be thinking: if we have a huge number, it would need to be halved many times. True, but each operation on it would also reduce the sum by a large amount. This gives us a time complexity of O ( n ⋅ log ⁡ n ) O(n⋅logn).
+'''
+import heapq
+
+class Solution:
+    def halveArray(self, nums: List[int]) -> int:
+        target = sum(nums) / 2
+        heap = [-num for num in nums]
+        heapq.heapify(heap)
+        
+        ans = 0
+        while target > 0:
+            ans += 1
+            x = heapq.heappop(heap)
+            target += x / 2
+            heapq.heappush(heap, x / 2)
+        
+        return ans
+'''
 [5, 19, 8, 1]
 
 sum = 33
