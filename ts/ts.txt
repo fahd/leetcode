@@ -1,0 +1,14 @@
+Interfaces
+ - Defines structure of an object
+ - Implements Classes
+ - Supports Declaration merging
+ - Cannot handle unions or intersections
+ - more for structural contracts
+
+Types
+  - Defines structure of an object
+  - Not used for Classes
+  - Does not support declaration merging
+  - More flexible - can define union, intersection, 
+  - Can alias primitives
+  - more for advanced type composition
